@@ -20,15 +20,17 @@ class Menu {
 
   factory Menu.fromJson(dynamic json) {
     String M = json['id'];
+    String img=json['image'];
     return Menu(
       id: json["id"],
       restId: json["rest_id"],
       name: json["name"],
       descr: json["descr"],
       price: json["price"],
-      image: json["image"],
+      image:'http://appback.ppu.edu/static/$img',
       rating: json["rating"],
       men: 'http://appback.ppu.edu/menus/$M',
     );
   }
 }
+
