@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 class Restaurants {
-  List<Restaurants> restaurantsFromJson(String str) {
-    return List<Restaurants>.from(
-        json.decode(str).map((x) => Restaurants.fromJson(x)));
-  }
+  // List<Restaurants> restaurantsFromJson(String str) {
+  //   return List<Restaurants>.from(
+  //       json.decode(str).map((x) => Restaurants.fromJson(x)));
+  // }
 
   int id;
   String name;

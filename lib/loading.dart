@@ -17,7 +17,7 @@ class _LoadingState extends State<Loading> {
     http.Response response =
         await http.get('http://appback.ppu.edu/restaurants');
     if (response.statusCode == 200) {
-      var jsonArray = jsonDecode(response.body)['invoices'] as List;
+      var jsonArray = jsonDecode(response.body)['restaurants'] as List;
       restaurants = jsonArray.map((e) => Restaurants.fromJson(e)).toList();
       Navigator.pushReplacement(
           context,
@@ -36,17 +36,27 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[900],
-      body: Center(
-        child: SpinKitThreeBounce(
-          itemBuilder: (BuildContext context, int index) {
-            return DecoratedBox(
-              decoration: BoxDecoration(
-                color: index.isEven ? Colors.white : Colors.deepOrangeAccent,
-              ),
-            );
-          },
-        ),
+      backgroundColor: Colors.orangeAccent,
+      body: Column(
+        children: [
+          Container(
+            child: Image.network(
+              'https://image.similarpng.com/very-thumbnail/2020/06/Fast-delivery-package-by-scooter-mobile-phone-order-vector-PNG.png',
+              fit: BoxFit.cover,
+            ),
+          ),
+          Center(
+            child: SpinKitThreeBounce(
+              itemBuilder: (BuildContext context, int index) {
+                return DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: index.isEven ? Colors.white : Colors.white,
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
