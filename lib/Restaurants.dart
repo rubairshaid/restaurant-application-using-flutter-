@@ -27,6 +27,8 @@ class Restaurants {
   });
 
   factory Restaurants.fromJson(dynamic json) {
+    String img = json['image'];
+ 
     return Restaurants(
       id: json["id"],
       name: json["name"],
@@ -34,8 +36,9 @@ class Restaurants {
       lat: json["lat"],
       lng: json["lng"],
       phone: json["phone"],
-      image: json["image"],
+      image: 'http://appback.ppu.edu/static/$img',
       rating: json["rating"],
     );
   }
 }
+
