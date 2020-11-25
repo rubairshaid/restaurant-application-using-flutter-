@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 class Restaurants {
-  // List<Restaurants> restaurantsFromJson(String str) {
-  //   return List<Restaurants>.from(
-  //       json.decode(str).map((x) => Restaurants.fromJson(x)));
-  // }
+  List<Restaurants> restaurantsFromJson(String str) {
+    return List<Restaurants>.from(
+        json.decode(str).map((x) => Restaurants.fromJson(x)));
+  }
 
   int id;
   String name;
@@ -27,8 +27,6 @@ class Restaurants {
   });
 
   factory Restaurants.fromJson(dynamic json) {
-    String img = json['image'];
-
     return Restaurants(
       id: json["id"],
       name: json["name"],
@@ -36,7 +34,7 @@ class Restaurants {
       lat: json["lat"],
       lng: json["lng"],
       phone: json["phone"],
-      image: 'http://appback.ppu.edu/static/$img',
+      image: json["image"],
       rating: json["rating"],
     );
   }
