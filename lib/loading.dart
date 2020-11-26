@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:http/http.dart' as http;
@@ -37,12 +38,16 @@ class _LoadingState extends State<Loading> {
     return Scaffold(
       backgroundColor: Colors.orangeAccent,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            child: Image.network(
-              'https://image.similarpng.com/very-thumbnail/2020/06/Fast-delivery-package-by-scooter-mobile-phone-order-vector-PNG.png',
-              fit: BoxFit.cover,
-            ),
+          Text(
+            'Talabat',
+            style: TextStyle(
+                fontSize: 90.0,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.normal),
           ),
           Center(
             child: SpinKitThreeBounce(
@@ -60,3 +65,4 @@ class _LoadingState extends State<Loading> {
     );
   }
 }
+
