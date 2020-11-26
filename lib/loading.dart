@@ -11,20 +11,19 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
-  List<Restaurants> restaurants = [];
-
   void fetchRestaurant() async {
     http.Response response =
         await http.get('http://appback.ppu.edu/restaurants');
+    List<Restaurants> _restaurants = [];
     if (response.statusCode == 200) {
-      var jsonArray = jsonDecode(response.body)['restaurants'] as List;
-      restaurants = jsonArray.map((e) => Restaurants.fromJson(e)).toList();
-      Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => MainPage(restaurants),
-          ));
+      var jsonArray = jsonDecode(response.body) as List;
+      _restaurants = jsonArray.map((e) => Restaurants.fromJson(e)).toList();
     }
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => MainPage(_restaurants),
+        ));
   }
 
   @override
