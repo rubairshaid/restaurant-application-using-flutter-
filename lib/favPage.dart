@@ -39,7 +39,7 @@ class _FavoritePageState extends State<FavoritePage> {
                     return Container(
                         margin: EdgeInsets.fromLTRB(5,1,5,1),
                         child: Card(
-                          color: Colors.orangeAccent,
+                          color: Colors.orangeAccent[900],
                           shape: RoundedRectangleBorder(
                             side: BorderSide(width:2 ,color: Colors.blue[50],), 
                             borderRadius: BorderRadius.all(Radius.circular(10),),),

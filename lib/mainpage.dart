@@ -17,9 +17,9 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List<Restaurants> res;
-  List<Restaurants> forNullText;
+  List<Restaurants> forNullText ;
 
-  _MainPageState(this.res) {
+  _MainPageState(this.res){
     forNullText = res;
   }
 
@@ -89,12 +89,15 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
               onSubmitted: (text) {
-                print(text);
+                print (text);
                 text = text.toLowerCase();
-                if (text == "") {
-                  res = forNullText;
-                  setState(() {});
-                  return;
+                if(text=="")
+                {
+                  res=forNullText;
+                  setState(() {
+
+                  });
+                  return ;
                 }
 
                 setState(() {
@@ -202,27 +205,28 @@ class _MainPageState extends State<MainPage> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       FlatButton(
-                                          child: Container(
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.end,
-                                              children: [
-                                                Icon(
-                                                  Icons.menu,
-                                                  color: Colors.indigo[900],
-                                                ),
-                                              ],
-                                            ),
+
+
+                                        child: Container(
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              Icon(
+                                                Icons.menu,
+                                                color: Colors.indigo[900],
+                                              ),
+                                            ],
                                           ),
-                                          onPressed: () {
-                                            Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) => Header(
-                                                      res[index].id,
-                                                      res[index].name),
-                                                ));
-                                          }),
+                                        ),
+                                        onPressed: (){
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>  Header(res[index].id , res[index].name),
+                                              ));
+                                        }
+                                      ),
                                       FlatButton(
                                         color: Colors.orangeAccent,
                                         shape: RoundedRectangleBorder(
@@ -285,3 +289,4 @@ class _MainPageState extends State<MainPage> {
         });
   }
 }
+
