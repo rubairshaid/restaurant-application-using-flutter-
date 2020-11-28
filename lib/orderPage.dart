@@ -109,7 +109,7 @@ class _OrderPageState extends State<OrderPage> {
                                           IconButton(
                                               color: Colors.blue,
                                               icon:
-                                                  Icon(Icons.border_horizontal),
+                                                  Icon(Icons.horizontal_rule),
                                               onPressed: () {
                                                 if (orderedItems[index].cnt -
                                                         1 >=
