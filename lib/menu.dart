@@ -1,36 +1,30 @@
+
 class Menu {
-  int id;
-  int restId;
-  String name;
+  int id ; 
+  int restid;
+  String name ; 
   String descr;
-  int price;
-  String image;
-  dynamic rating;
-  String men;
+  int price ;
+  String image ;
+  int rating;
+  bool favarite = false;
+  bool ordered = false ; 
+  String resturant ; 
+  int cnt =0;
 
-  Menu(
-      {this.id,
-      this.restId,
-      this.name,
-      this.descr,
-      this.price,
-      this.image,
-      this.rating,
-      this.men});
+  Menu({this.id , this.restid , this.name , this.descr , this.price , this.image , this.rating ,this.resturant });
 
-  factory Menu.fromJson(dynamic json) {
-    String M = json['id'];
-    String img=json['image'];
+  factory Menu.fromJson(dynamic jsonMenu){
     return Menu(
-      id: json["id"],
-      restId: json["rest_id"],
-      name: json["name"],
-      descr: json["descr"],
-      price: json["price"],
-      image:'http://appback.ppu.edu/static/$img',
-      rating: json["rating"],
-      men: 'http://appback.ppu.edu/menus/$M',
+      id: jsonMenu['id'],
+      restid: jsonMenu['rest_id'],
+      name: jsonMenu['name'],
+      descr: jsonMenu['descr'],
+      price: jsonMenu['price'],
+      image: 'http://appback.ppu.edu/static/' + jsonMenu['image'],
+      rating: 2, // this must change (i did this because rating has null value)
+      resturant: "ruba",
     );
   }
+  void setResturant(String restname)=>this.resturant = restname;
 }
-
