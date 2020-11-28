@@ -27,6 +27,7 @@ dependencies:
   flutter_spinkit: ^4.1.2
   provider: ^4.3.2+2
   toast: ^0.1.5
+  rating_dialog: ^1.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
