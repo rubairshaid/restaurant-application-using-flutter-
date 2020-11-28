@@ -49,7 +49,7 @@ class _OrderPageState extends State<OrderPage> {
                       return Container(
                           margin: EdgeInsets.fromLTRB(5, 1, 5, 1),
                           child: Card(
-                            color: Colors.orangeAccent,
+                            color: Colors.orangeAccent[900],
                             shape: RoundedRectangleBorder(
                               side: BorderSide(
                                 width: 2,
