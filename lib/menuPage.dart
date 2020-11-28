@@ -75,9 +75,9 @@ class _MenuPageState extends State<MenuPage> {
                         margin: EdgeInsets.fromLTRB(5,1,5,1),
                         height: 150,
                         child: Card(
-                          color: Colors.white,
+                          color: Colors.orangeAccent[900],
                           shape: RoundedRectangleBorder(
-                            side: BorderSide(width:2 ,color: Colors.blue[50],), 
+                            side: BorderSide(width:2 ,color: Colors.blue[50],),
                             borderRadius: BorderRadius.all(Radius.circular(10),),),
                           child: Container(
                             padding: EdgeInsets.all(3),
