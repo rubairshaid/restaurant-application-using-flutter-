@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:talabat/Restaurants.dart';
 import 'package:rating_dialog/rating_dialog.dart';
 
+import 'appBarBody.dart';
+import 'menuPage.dart';
+
 class MainPage extends StatefulWidget {
   final List<Restaurants> restaurants;
 
@@ -205,13 +208,13 @@ class _MainPageState extends State<MainPage> {
                                             ],
                                           ),
                                         ),
-                                        // onPressed: (){
-                                        //   Navigator.push(
-                                        //       context,
-                                        //       MaterialPageRoute(
-                                        //         builder: (context) =>   Menu(),
-                                        //       ));
-                                        // }
+                                        onPressed: (){
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>  Header(),
+                                              ));
+                                        }
                                       ),
                                       FlatButton(
                                         color: Colors.orangeAccent,

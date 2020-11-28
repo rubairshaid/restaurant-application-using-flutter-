@@ -28,6 +28,9 @@ dependencies:
   provider: ^4.3.2+2
   toast: ^0.1.5
   rating_dialog: ^1.0.0
+  auto_size_text: ^2.1.0
+  flutter_star_rating: ^0.0.3
+  rating_bar: ^0.2.0
 
 
   # The following adds the Cupertino Icons font to your application.
