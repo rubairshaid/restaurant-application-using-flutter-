@@ -66,7 +66,7 @@ class _MenuPageState extends State<MenuPage> {
               List<Menu> snap = snapshot.data;
               return Expanded(
                 child: Container(
-                  color: Colors.blueGrey[50],
+                  color: Colors.orangeAccent,
                   child: ListView.builder(
                     itemCount: snap.length ,
                     itemBuilder: (context , int index )
@@ -75,7 +75,7 @@ class _MenuPageState extends State<MenuPage> {
                         margin: EdgeInsets.fromLTRB(5,1,5,1),
                         height: 150,
                         child: Card(
-                          color: Colors.orangeAccent,
+                          color: Colors.white,
                           shape: RoundedRectangleBorder(
                             side: BorderSide(width:2 ,color: Colors.blue[50],), 
                             borderRadius: BorderRadius.all(Radius.circular(10),),),
