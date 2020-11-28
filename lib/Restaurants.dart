@@ -34,7 +34,7 @@ class Restaurants {
       lat: json["lat"],
       lng: json["lng"],
       phone: json["phone"],
-      image: json["image"],
+      image: 'http://appback.ppu.edu/static/'+json["image"],
       rating: json["rating"],
     );
   }
