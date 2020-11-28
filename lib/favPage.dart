@@ -19,7 +19,16 @@ class _FavoritePageState extends State<FavoritePage> {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              title: Text("Favorite menus"),
+              backgroundColor: Colors.orangeAccent,
+              leading: FlatButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(
+                    Icons.keyboard_backspace,
+                    size: 30,
+                  )),
+              title: Text("Favorite menus",style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),),
               centerTitle: true,
             ),
             body: Consumer<MenuProvider>(builder: (context, fav, child) {
