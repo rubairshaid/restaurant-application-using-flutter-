@@ -5,13 +5,17 @@ import 'menuPage.dart';
 import 'orderPage.dart';
 
 class Header extends StatelessWidget {
-  const Header({Key key}) : super(key: key);
+
+  String resName ; 
+  int resId ; 
+
+  Header(this.resId , this.resName);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Favorite menus" ),
+        title: Text("$resName menu" ),
         actions: [
           IconButton(
               icon: Icon(Icons.fastfood ), 
@@ -26,7 +30,7 @@ class Header extends StatelessWidget {
             })
         ],
       ),
-      body: MenuPage(),
+      body: MenuPage(resId , resName),
     );
   }
 }

@@ -212,7 +212,7 @@ class _MainPageState extends State<MainPage> {
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
-                                                builder: (context) =>  Header(),
+                                                builder: (context) =>  Header(res[index].id , res[index].name),
                                               ));
                                         }
                                       ),

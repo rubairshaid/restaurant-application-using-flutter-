@@ -11,21 +11,28 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:rating_bar/rating_bar.dart';
 
 class MenuPage extends StatefulWidget {
+  final String resName ; 
+  final int resId;
+  MenuPage(this.resId, this.resName);
+
   @override
-  _MenuPageState createState() => _MenuPageState();
+  _MenuPageState createState() => _MenuPageState(resId , resName);
 }
 
 
 
 class _MenuPageState extends State<MenuPage> {
 
+  String resName ; 
+  int resId;
+  _MenuPageState(this.resId , this.resName);
 
   Future<List<Menu>> resMenu ; 
 //string rest name , int rest id
   Future<List<Menu>> fetchMenu() async{
 
     List<Menu> returnedMenu =[];
-    http.Response httpRes = await http.get ('http://appback.ppu.edu/menus/3');
+    http.Response httpRes = await http.get ('http://appback.ppu.edu/menus/$resId');
     if (httpRes.statusCode == 200)
     {
       var jsonStr = jsonDecode(httpRes.body) as List;
@@ -34,6 +41,7 @@ class _MenuPageState extends State<MenuPage> {
       {
         Menu m = Menu.fromJson(jsonStr[i]);
         returnedMenu.add(m);
+        m.setResturant(resName);
       }
       
     }
