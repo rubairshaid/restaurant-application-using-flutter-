@@ -15,6 +15,7 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.orangeAccent,
         title: Text("$resName menu" ),
         actions: [
           IconButton(
