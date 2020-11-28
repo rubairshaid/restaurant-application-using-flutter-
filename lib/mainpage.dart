@@ -17,8 +17,11 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List<Restaurants> res;
+  List<Restaurants> forNullText ;
 
-  _MainPageState(this.res);
+  _MainPageState(this.res){
+    forNullText = res;
+  }
 
   List<Restaurants> restaurant = List<Restaurants>();
 
@@ -85,10 +88,20 @@ class _MainPageState extends State<MainPage> {
                   color: Colors.black,
                 ),
               ),
-              onChanged: (text) {
+              onSubmitted: (text) {
+                print (text);
                 text = text.toLowerCase();
+                if(text=="")
+                {
+                  res=forNullText;
+                  setState(() {
+                    
+                  });
+                  return ;
+                }
+                
                 setState(() {
-                  restaurant = restaurant.where((element) {
+                  res = res.where((element) {
                     var cityTitle = element.city.toLowerCase();
                     return cityTitle.contains(text);
                   }).toList();
