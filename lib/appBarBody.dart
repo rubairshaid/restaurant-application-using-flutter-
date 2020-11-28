@@ -16,7 +16,7 @@ class Header extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.orangeAccent,
-        title: Text("$resName menu" , style: TextStyle(color: Colors.black),),
+        title: Text("$resName menu" , style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 25),),
         actions: [
           IconButton(
               icon: Icon(Icons.fastfood ), 
