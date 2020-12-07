@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'menu.dart';
+
 class Restaurants {
   List<Restaurants> restaurantsFromJson(String str) {
     return List<Restaurants>.from(
@@ -14,6 +16,7 @@ class Restaurants {
   String phone;
   String image;
   int rating;
+  List<Menu> menus;
 
   Restaurants({
     this.id,
@@ -37,5 +40,10 @@ class Restaurants {
       image: 'http://appback.ppu.edu/static/'+json["image"],
       rating: json["rating"],
     );
+  }
+
+  void setMenu(List<Menu> ll)
+  {
+    this.menus= ll ;
   }
 }

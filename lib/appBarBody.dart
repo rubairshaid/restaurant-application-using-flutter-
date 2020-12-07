@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'favPage.dart';
+import 'menu.dart';
 import 'menuPage.dart';
 import 'orderPage.dart';
 
 class Header extends StatelessWidget {
 
-  String resName ; 
-  int resId ; 
-
-  Header(this.resId , this.resName);
+  final List<Menu>snap;
+final String resName ; 
+  Header(this.resName , this.snap);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class Header extends StatelessWidget {
             })
         ],
       ),
-      body: MenuPage(resId , resName),
+      body: MenuPage(snap),
     );
   }
 }

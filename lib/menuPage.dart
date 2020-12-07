@@ -11,59 +11,58 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:rating_bar/rating_bar.dart';
 
 class MenuPage extends StatefulWidget {
-  final String resName ; 
-  final int resId;
-  MenuPage(this.resId, this.resName);
+  final List<Menu> snap;
+  MenuPage(this.snap);
 
   @override
-  _MenuPageState createState() => _MenuPageState(resId , resName);
+  _MenuPageState createState() => _MenuPageState(snap);
 }
 
 
 
 class _MenuPageState extends State<MenuPage> {
 
-  String resName ; 
-  int resId;
-  _MenuPageState(this.resId , this.resName);
+  List<Menu> snap;
+  
+  _MenuPageState(this.snap);
 
   Future<List<Menu>> resMenu ; 
 //string rest name , int rest id
-  Future<List<Menu>> fetchMenu() async{
+  // Future<List<Menu>> fetchMenu() async{
 
-    List<Menu> returnedMenu =[];
-    http.Response httpRes = await http.get ('http://appback.ppu.edu/menus/$resId');
-    if (httpRes.statusCode == 200)
-    {
-      var jsonStr = jsonDecode(httpRes.body) as List;
-      //returnedMenu = jsonStr.map((element)=> Menu.fromJson(element)).toList();
-      for (int i=0 ;i<jsonStr.length;i++)
-      {
-        Menu m = Menu.fromJson(jsonStr[i]);
-        returnedMenu.add(m);
-        m.setResturant(resName);
-      }
+  //   List<Menu> returnedMenu =[];
+  //   http.Response httpRes = await http.get ('http://appback.ppu.edu/menus/$resId');
+  //   if (httpRes.statusCode == 200)
+  //   {
+  //     var jsonStr = jsonDecode(httpRes.body) as List;
+  //     //returnedMenu = jsonStr.map((element)=> Menu.fromJson(element)).toList();
+  //     for (int i=0 ;i<jsonStr.length;i++)
+  //     {
+  //       Menu m = Menu.fromJson(jsonStr[i]);
+  //       returnedMenu.add(m);
+  //       m.setResturant(resName);
+  //     }
       
-    }
-    return returnedMenu;
+  //   }
+  //   return returnedMenu;
 
-  }
+  // }
  
  @override
   void initState() {
     super.initState();
-    resMenu = fetchMenu();
+   // resMenu = fetchMenu();
   }
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         FutureBuilder(
-          future: resMenu,
+          //future: resMenu,
           builder: (context , snapshot){
-            if (snapshot.hasData)
+            if (snap.isNotEmpty)
             {
-              List<Menu> snap = snapshot.data;
+              //List<Menu> snap = snapshot.data;
               return Expanded(
                 child: Container(
                   color: Colors.orangeAccent,

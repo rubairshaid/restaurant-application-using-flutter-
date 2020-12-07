@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:talabat/Restaurants.dart';
 import 'package:rating_dialog/rating_dialog.dart';
+import 'package:talabat/loadmenu.dart';
 
 import 'appBarBody.dart';
 import 'menuPage.dart';
@@ -223,7 +224,7 @@ class _MainPageState extends State<MainPage> {
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
-                                                builder: (context) =>  Header(res[index].id , res[index].name),
+                                                builder: (context) =>  LoadMenu(res[index].id , res[index].name),
                                               ));
                                         }
                                       ),
