@@ -60,54 +60,58 @@ class _MainPageState extends State<MainPage> {
           children: [
             Text(
               ' Restaurants List',
-              style: TextStyle(fontSize: 30.0, color: Colors.black),
+              style: TextStyle(fontSize: 26.0, color: Colors.black),
             )
           ],
         ),
       ),
       body: Column(
         children: [
-          Card(
-            color: Colors.orange[300],
-            shape: RoundedRectangleBorder(
-              side: BorderSide(
-                width: 2,
-                color: Colors.orangeAccent,
-              ),
-              borderRadius: BorderRadius.all(
-                Radius.circular(10),
-              ),
-            ),
-            child: TextField(
-              cursorRadius: Radius.circular(10),
-              cursorColor: Colors.black,
-              decoration: InputDecoration(
-                hintText: 'Search...',
-                icon: Icon(
-                  Icons.search,
-                  size: 25.0,
-                  color: Colors.black,
+          Container(
+            margin: EdgeInsets.only(top: 5),
+            color: Colors.orange[100],
+            child: Card(
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  width: 3,
+                  color: Colors.orangeAccent,
+                ),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10),
                 ),
               ),
-              onSubmitted: (text) {
-                print (text);
-                text = text.toLowerCase();
-                if(text=="")
-                {
-                  res=forNullText;
+              child: TextField(
+                cursorRadius: Radius.circular(10),
+                cursorColor: Colors.black,
+                decoration: InputDecoration(
+                  hintText: 'Search...',
+                  icon: Icon(
+                    Icons.search,
+                    size: 25.0,
+                    color: Colors.black,
+                  ),
+                ),
+                onSubmitted: (text) {
+                  print (text);
+                  text = text.toLowerCase();
+                  if(text=="")
+                  {
+                    res=forNullText;
+                    setState(() {
+
+                    });
+                    return ;
+                  }
+
                   setState(() {
-
+                    res = res.where((element) {
+                      var cityTitle = element.city.toLowerCase();
+                      return cityTitle.contains(text);
+                    }).toList();
                   });
-                  return ;
-                }
-
-                setState(() {
-                  res = res.where((element) {
-                    var cityTitle = element.city.toLowerCase();
-                    return cityTitle.contains(text);
-                  }).toList();
-                });
-              },
+                },
+              ),
             ),
           ),
           FutureBuilder(
@@ -132,7 +136,7 @@ class _MainPageState extends State<MainPage> {
               return Expanded(
                 child: Container(
                   margin: EdgeInsets.only(top: 5),
-                  color: Colors.orangeAccent,
+                  color: Colors.orange[100],
                   child: ListView.builder(
                     itemCount: res.length,
                     itemBuilder: (context, index) {

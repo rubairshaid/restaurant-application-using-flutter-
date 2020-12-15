@@ -26,6 +26,7 @@ class _OrderPageState extends State<OrderPage> {
             child: Icon(
               Icons.keyboard_backspace,
               size: 30,
+              color: Colors.white,
             )),
         title: Text(
           "Order",

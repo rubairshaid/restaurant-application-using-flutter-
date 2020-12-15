@@ -27,8 +27,9 @@ class _FavoritePageState extends State<FavoritePage> {
                   child: Icon(
                     Icons.keyboard_backspace,
                     size: 30,
+                    color: Colors.white,
                   )),
-              title: Text("Favorite menus",style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),),
+              title: Text("Favorite menus",style: TextStyle(color: Colors.black,fontSize: 25),),
               centerTitle: true,
             ),
             body: Consumer<MenuProvider>(builder: (context, fav, child) {

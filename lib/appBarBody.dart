@@ -16,7 +16,7 @@ final String resName ;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.orangeAccent,
-        title: Text("$resName menu" , style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 25),),
+        title: Text("$resName menu" , style: TextStyle(color: Colors.black,fontSize: 25),),
         actions: [
           IconButton(
               icon: Icon(Icons.fastfood ), 
