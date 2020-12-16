@@ -1,10 +1,8 @@
 
-import 'dart:convert';
 import 'package:provider/provider.dart';
 import 'main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'menu.dart';
 import 'package:auto_size_text/auto_size_text.dart';

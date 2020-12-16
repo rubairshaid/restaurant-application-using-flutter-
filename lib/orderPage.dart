@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:rating_bar/rating_bar.dart';
-
 import 'main.dart';
 import 'menu.dart';
 

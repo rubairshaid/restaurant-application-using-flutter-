@@ -3,22 +3,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:http/http.dart' as http;
-import 'package:talabat/menuPage.dart';
 import 'Restaurants.dart';
 import 'appBarBody.dart';
 import 'array.dart';
-import 'mainpage.dart';
 import 'menu.dart';
 
 class LoadMenu extends StatefulWidget {
-  Restaurants res ; 
+  final Restaurants res ; 
   LoadMenu(this.res);
   @override
   _LoadMenuState createState() => _LoadMenuState(res);
 }
 
 class _LoadMenuState extends State<LoadMenu> {
-  Restaurants res ; 
+  final Restaurants res ; 
 
   _LoadMenuState(this.res);
 

@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'favPage.dart';
 import 'map.dart';
-import 'menu.dart';
 import 'Restaurants.dart';
 import 'menuPage.dart';
 import 'orderPage.dart';
