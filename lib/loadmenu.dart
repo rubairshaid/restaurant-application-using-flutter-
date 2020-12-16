@@ -11,35 +11,33 @@ import 'mainpage.dart';
 import 'menu.dart';
 
 class LoadMenu extends StatefulWidget {
-  String resName ; 
-  int resId;
-  LoadMenu(this.resId , this.resName);
+  Restaurants res ; 
+  LoadMenu(this.res);
   @override
-  _LoadMenuState createState() => _LoadMenuState(resId , resName);
+  _LoadMenuState createState() => _LoadMenuState(res);
 }
 
 class _LoadMenuState extends State<LoadMenu> {
-  String resName ; 
-  int resId;
+  Restaurants res ; 
 
-  _LoadMenuState(this.resId , this.resName);
+  _LoadMenuState(this.res);
 
   void fetchRestaurant() async {
 
     List<Menu> returnedMenu =[];
-    if (visitedResturants.contains(resId))
+    if (visitedResturants.contains(res.id))
     {
-      List<Restaurants> rr = allres.where((e){return e.id==resId;}).toList();
+      List<Restaurants> rr = allres.where((e){return e.id==res.id;}).toList();
       returnedMenu = rr[0].menus;
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => Header(resName , returnedMenu),
+          builder: (context) => Header(res),
         ));
     }
     else{
-      visitedResturants.add(resId);
-   http.Response httpRes = await http.get ('http://appback.ppu.edu/menus/$resId');
+      visitedResturants.add(res.id);
+   http.Response httpRes = await http.get ('http://appback.ppu.edu/menus/${res.id}');
     if (httpRes.statusCode == 200)
     {
       var jsonStr = jsonDecode(httpRes.body) as List;
@@ -48,16 +46,16 @@ class _LoadMenuState extends State<LoadMenu> {
       {
         Menu m = Menu.fromJson(jsonStr[i]);
         returnedMenu.add(m);
-        m.setResturant(resName);
+        m.setResturant(res.name);
       }
-      List<Restaurants> rr = allres.where((e){return e.id==resId;}).toList();
+      List<Restaurants> rr = allres.where((e){return e.id==res.id;}).toList();
       rr[0].setMenu(returnedMenu);
       
     }
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => Header(resName , returnedMenu),
+          builder: (context) => Header(res),
         ));
         }
   }

@@ -4,8 +4,6 @@ import 'package:talabat/Restaurants.dart';
 import 'package:rating_dialog/rating_dialog.dart';
 import 'package:talabat/loadmenu.dart';
 
-import 'appBarBody.dart';
-import 'menuPage.dart';
 
 class MainPage extends StatefulWidget {
   final List<Restaurants> restaurants;
@@ -210,8 +208,6 @@ class _MainPageState extends State<MainPage> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       FlatButton(
-
-
                                         child: Container(
                                           child: Row(
                                             mainAxisAlignment:
@@ -228,7 +224,7 @@ class _MainPageState extends State<MainPage> {
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
-                                                builder: (context) =>  LoadMenu(res[index].id , res[index].name),
+                                                builder: (context) =>  LoadMenu(res[index]),
                                               ));
                                         }
                                       ),

@@ -31,6 +31,7 @@ dependencies:
   auto_size_text: ^2.1.0
   flutter_star_rating: ^0.0.3
   rating_bar: ^0.2.0
+  google_maps_flutter: ^0.5.11
 
 
   # The following adds the Cupertino Icons font to your application.

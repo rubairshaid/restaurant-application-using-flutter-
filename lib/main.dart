@@ -47,6 +47,7 @@ class MenuProvider extends ChangeNotifier{
   }
 
    void removeOrder(Menu menu){
+    totalPrice -= menu.cnt * menu.price;
     orderedMenu.remove(menu);
     notifyListeners();
   }
