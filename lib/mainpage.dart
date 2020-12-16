@@ -194,7 +194,7 @@ class _MainPageState extends State<MainPage> {
                                               size: 25,
                                             ),
                                             Text(
-                                              '${res[index].rating}',
+                                              '${res[index].rating.floor()}',
                                               style: TextStyle(
                                                   fontSize: 16,
                                                   fontWeight: FontWeight.bold),
@@ -280,7 +280,7 @@ class _MainPageState extends State<MainPage> {
             // optional
             onSubmitPressed: (int rating) {
               print("onSubmitPressed: rating = $rating");
-              rest.rating = (rating + rest.rating) ~/ 1.5;
+              rest.rating = (rating + rest.rating) / 1.5;
               setState(() {});
             },
             onAlternativePressed: () {

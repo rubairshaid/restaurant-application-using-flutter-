@@ -15,7 +15,7 @@ class Restaurants {
   String lng;
   String phone;
   String image;
-  int rating;
+  double rating;
   List<Menu> menus;
 
   Restaurants({
@@ -38,7 +38,7 @@ class Restaurants {
       lng: json["lng"],
       phone: json["phone"],
       image: 'http://appback.ppu.edu/static/'+json["image"],
-      rating: json["rating"],
+      rating: json["rating"].toDouble(),
     );
   }
 
