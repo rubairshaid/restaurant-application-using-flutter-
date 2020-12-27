@@ -25,26 +25,6 @@ class _MenuPageState extends State<MenuPage> {
   _MenuPageState(this.snap);
 
   Future<List<Menu>> resMenu ; 
-//string rest name , int rest id
-  // Future<List<Menu>> fetchMenu() async{
-
-  //   List<Menu> returnedMenu =[];
-  //   http.Response httpRes = await http.get ('http://appback.ppu.edu/menus/$resId');
-  //   if (httpRes.statusCode == 200)
-  //   {
-  //     var jsonStr = jsonDecode(httpRes.body) as List;
-  //     //returnedMenu = jsonStr.map((element)=> Menu.fromJson(element)).toList();
-  //     for (int i=0 ;i<jsonStr.length;i++)
-  //     {
-  //       Menu m = Menu.fromJson(jsonStr[i]);
-  //       returnedMenu.add(m);
-  //       m.setResturant(resName);
-  //     }
-      
-  //   }
-  //   return returnedMenu;
-
-  // }
  
  @override
   void initState() {
@@ -125,7 +105,7 @@ class _MenuPageState extends State<MenuPage> {
                                               Provider.of<MenuProvider>(context , listen: false).removeOrder(snap[index])
                                               :Provider.of<MenuProvider>(context , listen: false).addOrder(snap[index]);
                                               setState(() {
-                                                snap[index].ordered = !snap[index].ordered;               
+                                                snap[index].ordered = !snap[index].ordered;   // to reverse the state of the menu (order)            
                                               });
                                             }, 
                                             child: Container(

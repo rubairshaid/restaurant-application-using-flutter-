@@ -23,7 +23,7 @@ class MyMap extends StatelessWidget {
         backgroundColor: Colors.orangeAccent,
         leading: FlatButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.pop(context); // go back
                   },
                   child: Icon(
                     Icons.keyboard_backspace,

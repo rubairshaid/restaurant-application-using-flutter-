@@ -16,15 +16,15 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List<Restaurants> res;
-  List<Restaurants> forNullText ;
+  List<Restaurants> forNullText ; // when we search with null text 
 
   _MainPageState(this.res){
     forNullText = res;
   }
 
-  List<Restaurants> restaurant = List<Restaurants>();
+  List<Restaurants> restaurant = List<Restaurants>(); // --
 
-  void sortAndFilter() {
+  void sortAndFilter() { // for rating sort (comparing between 2 resturants )
     res.sort((a, b) => b.rating.compareTo(a.rating));
     print(res);
   }
@@ -93,17 +93,16 @@ class _MainPageState extends State<MainPage> {
                 onSubmitted: (text) {
                   print (text);
                   text = text.toLowerCase();
-                  if(text=="")
+                  if(text=="") // search about nothing 
                   {
-                    res=forNullText;
+                    res=forNullText; // the result of the search is displaying all resturants
                     setState(() {
-
                     });
                     return ;
                   }
-
+                     // if the text is not empty
                   setState(() {
-                    res = res.where((element) {
+                    res = res.where((element) { // list of returants that contain the searched text 
                       var cityTitle = element.city.toLowerCase();
                       return cityTitle.contains(text);
                     }).toList();
@@ -194,7 +193,7 @@ class _MainPageState extends State<MainPage> {
                                               size: 25,
                                             ),
                                             Text(
-                                              '${res[index].rating.floor()}',
+                                              '${res[index].rating.floor()}', // diplay the floor of the number 
                                               style: TextStyle(
                                                   fontSize: 16,
                                                   fontWeight: FontWeight.bold),

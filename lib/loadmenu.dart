@@ -25,7 +25,7 @@ class _LoadMenuState extends State<LoadMenu> {
     List<Menu> returnedMenu =[];
     if (visitedResturants.contains(res.id))
     {
-      List<Restaurants> rr = allres.where((e){return e.id==res.id;}).toList();
+      List<Restaurants> rr = allres.where((e){return e.id==res.id;}).toList(); //  return one resturant object 
       returnedMenu = rr[0].menus;
       Navigator.pushReplacement(
         context,
@@ -43,8 +43,8 @@ class _LoadMenuState extends State<LoadMenu> {
       for (int i=0 ;i<jsonStr.length;i++)
       {
         Menu m = Menu.fromJson(jsonStr[i]);
-        returnedMenu.add(m);
-        m.setResturant(res.name);
+        returnedMenu.add(m); // to construct the menu list of resturant 
+        m.setResturant(res.name); // set the resturant name of the menu 
       }
       List<Restaurants> rr = allres.where((e){return e.id==res.id;}).toList();
       rr[0].setMenu(returnedMenu);
